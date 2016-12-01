@@ -1,0 +1,17 @@
+{
+  "name": "MSJapan",
+  "version": "0.0.1",
+  "description": "MS 445 Project - Team SanchyaBasketball",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser"  : "latest",
+    "cors"         : "latest",
+    "express"      : "latest",
+    "mssql"        : "latest"
+  }
+}
