@@ -66,7 +66,7 @@ function goPlease() {
   connectToDb().then(() => {
   	getProduct();
     makeRouter();
-    app.listen(3000);
+    // app.listen(3000);
   })
 }
 
