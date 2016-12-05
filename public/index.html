@@ -24,8 +24,10 @@
   <label class="col-md-4 control-label" for="Brand">Brand Name</label>
   <div class="col-md-4">
     <select id="Brand" name="Brand" class="form-control">
-      <option value="1">{{ brands[0] }}</option>
-      <option value="2">{{ brands[1] }}</option>
+    <option ng-repeat="x in brands">
+      {{x}}
+    </option>
+
     </select>
   </div>
 </div>
