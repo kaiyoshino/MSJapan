@@ -1,12 +1,12 @@
 <!doctype html>
-<html>
+<html ng-app="MSJapan">
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
   <script src="app.js"></script>
 <title>Search</title>
 </head>
@@ -24,8 +24,8 @@
   <label class="col-md-4 control-label" for="Brand">Brand Name</label>
   <div class="col-md-4">
     <select id="Brand" name="Brand" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
+      <option value="1">{{ brands[0] }}</option>
+      <option value="2">{{ brands[1] }}</option>
     </select>
   </div>
 </div>
