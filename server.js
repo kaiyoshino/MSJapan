@@ -7,9 +7,9 @@ var path = require('path')
 var app = express()
 var bodyParser = require('body-parser')
 
-// app.use(express.static(__dirname + '/static/public'));
-// app.use(bodyParser.json()); // support json encoded bodies
-// app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 function getPass() {
   var pass = 'GoHuskies!'
@@ -42,12 +42,23 @@ function getProduct() {
 }
 
 function makeRouter() {
-  app.use(cors())  
+	// app.use( bodyParser.json() );       // to support JSON-encoded bodies
+	// app.use(bodyParser.urlencoded({ extended: true }));  // to support URL-encoded bodies
+		
+    app.use(cors())  
  
-  // frames
-  app.get('/', function (req, res) {
-     res.sendFile('/static/home.html', { root: __dirname })
-  })
+    app.get('/', function (req, res) {
+    	res.sendFile('./public/index.html', { root: __dirname })
+	})
+
+    app.get('/addForm', function (req, res) {
+		res.sendFile('/public/addForm.html', { root: __dirname })
+	});
+
+	app.get('/products', function (req, res) {
+		var brands = ["lenovo", "dell"];
+		res.json(brands, brands);
+	})
 
 }
 
