@@ -37,7 +37,7 @@ function getProduct() {
 		//.query('SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = "BASE TABLE" AND TABLE_CATALOG="dbName"')
 		// .query('SELECT P.ProductName FROM Product P JOIN Manufacturer M ON P.ManufacturerID = M.ManufacturerID WHERE M.ManfacturerName = "Lenovo")
 		.then(function(recordsets) {
-			console.log(recordsets);
+			// console.log(recordsets);
 		})
 }
 
@@ -57,7 +57,7 @@ function makeRouter() {
 
 	app.get('/products', function (req, res) {
 		var brands = ["lenovo", "dell"];
-		res.json(brands, brands);
+		res.json(brands);
 	})
 
 }
