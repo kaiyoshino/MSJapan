@@ -7,6 +7,8 @@ var path = require('path')
 var app = express()
 var bodyParser = require('body-parser')
 
+var data
+
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
@@ -24,7 +26,7 @@ function connectToDb() {
     user: 'INFO445',
     password: getPass(),
     server: 'is-hay04.ischool.uw.edu',
-    database: 'MSJAPAN'
+    database: 'derryc09'
   }
   return sql.connect(config)
 }
@@ -33,11 +35,12 @@ function getProduct() {
 	console.log("Getting Product")
 	return new sql.Request()
 		// .query('SELECT db_name()')
-		.query('SELECT * FROM sys.Tables')
+		.query('SELECT * FROM hardware')
 		//.query('SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = "BASE TABLE" AND TABLE_CATALOG="dbName"')
 		// .query('SELECT P.ProductName FROM Product P JOIN Manufacturer M ON P.ManufacturerID = M.ManufacturerID WHERE M.ManfacturerName = "Lenovo")
 		.then(function(recordsets) {
 			// console.log(recordsets);
+      data = recordsets;
 		})
 }
 
@@ -56,8 +59,7 @@ function makeRouter() {
 	});
 
 	app.get('/products', function (req, res) {
-		var brands = ["lenovo", "dell"];
-		res.json(brands);
+		res.json(data);
 	})
 
 }

@@ -3,12 +3,12 @@
 var MSJapan = angular.module('MSJapan', []);
 
 function mainController($scope, $http) {
-    $scope.brands = {};
+    $scope.data = {};
 
      // when landing on the page, get all brand and show them
     $http.get('/products')
         .success(function(data) {
-            $scope.brands = data;
+            $scope.data = data;
             console.log(data);
         })
         .error(function(data) {

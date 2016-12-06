@@ -21,12 +21,17 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Brand">Brand Name</label>
+  <label class="col-md-4 control-label" for="data">Brand Name</label>
   <div class="col-md-4">
-    <select id="Brand" name="Brand" class="form-control">
-    <option ng-repeat="x in brands">
+<!--     <select id="data" name="data" class="form-control">
+    <option ng-repeat="x in data">
       {{x}}
-    </option>
+    </option> -->
+    <ul>
+    <li ng-repeat="x in data">
+        {{x}}
+    </li>
+    </ul>
 
     </select>
   </div>
