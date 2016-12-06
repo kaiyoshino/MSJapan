@@ -1,114 +1,134 @@
 <!doctype html>
 <html ng-app="MSJapan">
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <script src="app.js"></script>
-<title>Search</title>
-</head>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+      <script src="app.js"></script>
+      <title>Search</title>
+   </head>
+   <body ng-controller="mainController">
+    <!-- Form Name -->
+                     <legend>Advanced Search</legend>
+      <div class = "container">
+         <div class="row">
+            <div class="col-md-4" style="margin-top: 38px;">
+               <form class="form-horizontal">
+                  <fieldset>
+                     
+                     <!-- Select Basic -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="data">Brand Name</label>
+                        <div class="col-md-4">
+                               <select id="data" name="data" class="form-control">
+                              <option ng-repeat="x in data">
+                                {{x.Brand}}
+                              </option>
+            <!--                <ul>
+                              <li ng-repeat="x in data">
+                                 {{x.Brand}}
+                              </li>
+                           </ul> -->
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Select Basic -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="Storage">Storage</label>
+                        <div class="col-md-4">
+                           <select id="Storage" name="Storage" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Select Basic -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="Screen">Screen Size</label>
+                        <div class="col-md-4">
+                           <select id="Screen" name="Screen" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Select Basic -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="Weight">Weight</label>
+                        <div class="col-md-4">
+                           <select id="Weight" name="Weight" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Select Basic -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="RAM">RAM</label>
+                        <div class="col-md-4">
+                           <select id="RAM" name="RAM" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                           </select>
+                        </div>
+                     </div>
+                     <!-- Multiple Checkboxes -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="Touch">Touch</label>
+                        <div class="col-md-4">
+                           <div class="checkbox">
+                              <label for="Touch-0">
+                              <input type="checkbox" name="Touch" id="Touch-0" value="1">
+                              Touch
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Multiple Checkboxes -->
+                     <div class="form-group">
+                        <label class="col-md-4 control-label" for="2 in 1">2 in 1</label>
+                        <div class="col-md-4">
+                           <div class="checkbox">
+                              <label for="2 in 1-0">
+                              <input type="checkbox" name="2 in 1" id="2 in 1-0" value="1">
+                              2 in 1
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+               </form>
+            </div>
+            <div class="col-md-8">
 
-<body ng-controller="mainController">
 
-<form class="form-horizontal">
-<fieldset>
 
-<!-- Form Name -->
-<legend>Advanced Search</legend>
+                <table class="table table-hover" id="data" name="data" class="form-control">
+                  <thead>
+                    <tr>
+                      <th>Brand</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in data">
+                      <td>{{x.Brand}}</td>
+                      <td>{{x.Product}}}</td>
+                      <td>{{ x['Price(Yen)'] | currency:'¥':00 }}</td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="data">Brand Name</label>
-  <div class="col-md-4">
-<!--     <select id="data" name="data" class="form-control">
-    <option ng-repeat="x in data">
-      {{x}}
-    </option> -->
-    <ul>
-    <li ng-repeat="x in data">
-        {{x}}
-    </li>
-    </ul>
 
-    </select>
-  </div>
-</div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Storage">Storage</label>
-  <div class="col-md-4">
-    <select id="Storage" name="Storage" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-    </select>
-  </div>
-</div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Screen">Screen Size</label>
-  <div class="col-md-4">
-    <select id="Screen" name="Screen" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-    </select>
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Weight">Weight</label>
-  <div class="col-md-4">
-    <select id="Weight" name="Weight" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-    </select>
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="RAM">RAM</label>
-  <div class="col-md-4">
-    <select id="RAM" name="RAM" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-    </select>
-  </div>
-</div>
-
-<!-- Multiple Checkboxes -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Touch">Touch</label>
-  <div class="col-md-4">
-  <div class="checkbox">
-    <label for="Touch-0">
-      <input type="checkbox" name="Touch" id="Touch-0" value="1">
-      Touch
-    </label>
-  </div>
-  </div>
-</div>
-
-<!-- Multiple Checkboxes -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="2 in 1">2 in 1</label>
-  <div class="col-md-4">
-  <div class="checkbox">
-    <label for="2 in 1-0">
-      <input type="checkbox" name="2 in 1" id="2 in 1-0" value="1">
-      2 in 1
-    </label>
-  </div>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-</body>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
