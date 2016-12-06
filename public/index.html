@@ -13,7 +13,7 @@
    <body ng-controller="mainController">
     <!-- Form Name -->
                      <legend>Advanced Search</legend>
-      <div class = "container">
+      <div class = "container" style="margin-left:20px;">
          <div class="row">
             <div class="col-md-4" style="margin-top: 38px;">
                <form class="form-horizontal">
@@ -112,13 +112,15 @@
                       <th>Brand</th>
                       <th>Product</th>
                       <th>Price</th>
+                      <th>Price(USD)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="x in data">
                       <td>{{x.Brand}}</td>
                       <td>{{x.Product}}}</td>
-                      <td>{{ x['Price(Yen)'] | currency:'¥':00 }}</td>
+                      <td>{{ x['Price(Yen)'] | currency : "¥"}}</td>
+                      <td style="text-align: right;">{{ x['Price(Yen)'] * 0.0088 | currency:'$':00}}</td>
                     </tr>
                    
                   </tbody>
@@ -131,4 +133,5 @@
          </div>
       </div>
    </body>
+
 </html>
