@@ -111,19 +111,18 @@
                     <tr>
                       <th>Brand</th>
                       <th>Product</th>
-                      <th>Price</th>
-                      <th>Price(USD)</th>
+                      <th id="togglePrice" style="cursor:pointer">Price</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="x in data">
                       <td>{{x.Brand}}</td>
                       <td>{{x.Product}}}</td>
-                      <td>{{ x['Price(Yen)'] | currency : "¥"}}</td>
-                      <td style="text-align: right;">{{ x['Price(Yen)'] * 0.0088 | currency:'$':00}}</td>
+                      <td><span class="currencySymbol">¥</span><span class="priceChange">{{ x['Price(Yen)']}}</span></td>
                     </tr>
                    
                   </tbody>
+    
                 </table>
 
 
@@ -132,6 +131,30 @@
             </div>
          </div>
       </div>
+      <script>
+      var x = 1; 
+      document.getElementById("togglePrice").addEventListener("click", function() {
+        var currency = document.getElementsByClassName("priceChange");
+        var currencySymbol = document.getElementsByClassName("currencySymbol");
+        if(x == 1 ){
+          for(var i = 0; i < currency.length; i++){
+              currency[i].innerText=(currency[i].innerText*0.0088).toFixed(2)    // Change the content
+          }
+          for(var i = 0; i < currencySymbol.length; i++){
+            currencySymbol[i].innerText = "$";
+          }
+          x = 2;
+        } else if(x == 2){
+            for(var i = 0; i < currency.length; i++){
+              currency[i].innerText=(currency[i].innerText/0.0088).toFixed(0)    // Change the content
+            }
+            for(var i = 0; i < currencySymbol.length; i++){
+              currencySymbol[i].innerText = "¥";
+            }
+            x = 1;
+        }
+  	  });
+      </script>
    </body>
 
 </html>
