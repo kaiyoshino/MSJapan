@@ -44,6 +44,33 @@ function getProduct() {
 		})
 }
 
+function addProduct() {
+  console.log("Adding Product")
+  return new sql.Request()
+    .input('Retailer', sql.VarChar(50), Retailer)
+    .input('ProdName', sql.VarChar(50), Retailer)
+    .input('Brand', sql.VarChar(50), Retailer)
+    .input('Price', sql.Money(), Retailer)
+    .input('OS', sql.VarChar(50), Retailer)
+    .input('FormFactor', sql.VarChar(50), Retailer)
+    .input('CPU', sql.VarChar(50), Retailer)
+    .input('CPUSpeed', sql.Numeric(10,2), Retailer)
+    .input('StorageType', sql.VarChar(50), Retailer)
+    .input('StorageSize', sql.Float(), Retailer)
+    .input('Memory', sql.Int(), Retailer)
+    .input('Touch', sql.Bit(), Retailer)
+    .input('GPU', sql.VarChar(50), Retailer)
+    .input('resWidth', sql.Int(), Retailer)
+    .input('resHeight', sql.Int(), Retailer)
+    .input('DispSize', sql.Numeric(5,2), Retailer)
+    .input('NumUSB2', sql.Int(), Retailer)
+    .input('NumUSB3', sql.Int(), Retailer)
+    .input('NumHDMI', sql.Int(), Retailer)
+    .input('Weight', sql.Float(), Retailer)
+    .input('BatteryLife', sql.Numeric(5,2), Retailer)
+    .execute('dbo.insertProductProc')
+}
+
 function makeRouter() {
 	// app.use( bodyParser.json() );       // to support JSON-encoded bodies
 	// app.use(bodyParser.urlencoded({ extended: true }));  // to support URL-encoded bodies
