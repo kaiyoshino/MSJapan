@@ -89,37 +89,40 @@ function makeRouter() {
 
   app.post('/productSubmit', function (req, res) {
     connectToDb().then(function () {
-    var retailer = req.body.retailer
-    var prodName = req.body.prodName
-    var brand = req.body.brand
-    var price = req.body.price
-    var OS = req.body.OS
-    var formFactor = req.body.formFactor
-    var CPU = req.body.CPU
-    var CPUSpeed = req.body.CPUSpeed
-    var storageType = req.body. storageType
-    var storageSize = req.body.storageSize
-    var memory = req.body.memory
-    var touch = req.body.touch
-    var GPU = req.body.GPU
-    var resWidth = req.body.resWidth
-    var resHeight = req.body.resHeight
-    var dispSize = req.body.dispSize
-    var numUSB2 = req.body.numUSB2
-    var numUSB3 = req.body.numUSB3
-    var numHDMI = req.body.numHDMI
-    var weight = req.body.weight
-    var batteryLife = req.body.batteryLife
-      
-    addProduct(retailer, prodName, brand, price, OS, formFactor, CPU, CPUSpeed, storageType, storageSize, memory, touch, GPU, resWidth, resHeight, dispSize, numUSB2, numUSB3, numHDMI, weight, batteryLife).then(function () {
-    res.redirect('/')
-    console.log("success")
-    
-    }).catch(function (error) {
-      console.log(error);
-    });
+      var retailer = req.body.retailer
+      var prodName = req.body.prodName
+      var brand = req.body.brand
+      var price = req.body.price
+      var OS = req.body.OS
+      var formFactor = req.body.formFactor
+      var CPU = req.body.CPU
+      var CPUSpeed = req.body.CPUSpeed
+      var storageType = req.body. storageType
+      var storageSize = req.body.storageSize
+      var memory = req.body.memory
+      var touch = req.body.touch
+      var GPU = req.body.GPU
+      var resWidth = req.body.resWidth
+      var resHeight = req.body.resHeight
+      var dispSize = req.body.dispSize
+      var numUSB2 = req.body.numUSB2
+      var numUSB3 = req.body.numUSB3
+      var numHDMI = req.body.numHDMI
+      var weight = req.body.weight
+      var batteryLife = req.body.batteryLife
+        
+      addProduct(retailer, prodName, brand, price, OS, formFactor, CPU, CPUSpeed, storageType, storageSize, memory, touch, GPU, resWidth, resHeight, dispSize, numUSB2, numUSB3, numHDMI, weight, batteryLife).then(function () {
+        res.redirect('/')
+        console.log("success")
+      }).catch(function (err) {
+        console.log(err);
+      });
 
-}
+    }).catch(function (error) {
+        console.log(error);
+    })
+  })
+
 }
 
 function goPlease() {
