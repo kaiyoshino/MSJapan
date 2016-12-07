@@ -54,7 +54,7 @@ function addProduct(Retailer, ProdName, Brand, Price, OS, FormFactor, CPU, CPUSp
     .input('OS', sql.VarChar(50), OS)
     .input('FormFactor', sql.VarChar(50), FormFactor)
     .input('CPU', sql.VarChar(50), CPU)
-    .input('CPUSpeed', sql.Numeric(10,2), CPUSpeed)
+    .input('CPUSpeed', sql.Float(), CPUSpeed)
     .input('StorageType', sql.VarChar(50), StorageType)
     .input('StorageSize', sql.Float(), StorageSize)
     .input('Memory', sql.Int(), Memory)
@@ -62,13 +62,63 @@ function addProduct(Retailer, ProdName, Brand, Price, OS, FormFactor, CPU, CPUSp
     .input('GPU', sql.VarChar(50), GPU)
     .input('resWidth', sql.Int(), resWidth)
     .input('resHeight', sql.Int(), resWidth)
-    .input('DispSize', sql.Numeric(5,2), DispSize)
+    .input('DispSize', sql.Float(), DispSize)
     .input('NumUSB2', sql.Int(), NumUSB2)
     .input('NumUSB3', sql.Int(), NumUSB3)
     .input('NumHDMI', sql.Int(), NumHDMI)
     .input('Weight', sql.Float(), Weight)
-    .input('BatteryLife', sql.Numeric(5,2), BatteryLife)
+    .input('BatteryLife', sql.Float(), BatteryLife)
     .execute('insertProductProc')
+}
+
+function addJSON() {
+  var data = require('./yamada.json');
+  var product;
+  var brand;
+  var price;
+  var os;
+  var display;
+  var type;
+  var cpu;
+  var cpuSpeed;
+  var storageType;
+  var storageSize;
+  var memory;
+  var touch;
+  var gpu;
+  var resolutionWidth;
+  var resolutionHeight;
+  var usb2; 
+  var usb3;
+  var hdmi;
+  var weight;
+  var battery;
+
+  for(var i = 0; i < data.length; i++) {
+    product = data[i]["Product"];
+    brand = data[i]["Brand"];
+    price = data[i]["Price(Yen)"];
+    os = data[i]["Operating System"];
+    display = data[i]["Display Size"];
+    type = data[i]["Type"];
+    cpu = data[i]["CPU"];
+    cpuSpeed = data[i]["CPU Speed"];
+    storageType = data[i]["Storage Type (SSD, HDD, SSHD)"];
+    storageSize = data[i]["Storage Size (GB)"];
+    memory = data[i]["Memory (GB)"];
+    touch = data[i]["Touch (Y or N)"];
+    gpu = data[i]["GPU"];
+    resolutionWidth = data[i]["Resolution Width"];
+    resolutionHeight = data[i]["Resolution Height"];
+    usb2 =  data[i]["Number USB2"];
+    usb3 = data[i]["Number USB3"];
+    hdmi = data[i]["Number HDMI"];
+    weight = data[i]["Weight"];
+    battery = data[i]["Battery Life"];
+    console.log(product);
+    addProduct("Yamada", product, brand, price, os, type, cpu, cpuSpeed, storageType, storageSize, memory, touch, gpu, resolutionWidth, resolutionHeight, display, usb2, usb3, hdmi, weight, battery);
+    console.log("done");
+  }
 }
 
 function makeRouter() {
@@ -87,6 +137,11 @@ function makeRouter() {
 	app.get('/products', function (req, res) {
 		res.json(data);
 	})
+
+  app.get('/addJSON', function(req, res) {
+    addJSON();
+    console.log("added JSON")
+  })
 
   app.post('/productSubmit', function (req, res) {
     connectToDb().then(function () {
