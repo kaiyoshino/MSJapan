@@ -26,7 +26,7 @@ function connectToDb() {
     user: 'INFO445',
     password: getPass(),
     server: 'is-hay04.ischool.uw.edu',
-    database: 'derryc09'
+    database: 'MSJAPAN'
   }
   return sql.connect(config)
 }
@@ -68,7 +68,7 @@ function addProduct(Retailer, ProdName, Brand, Price, OS, FormFactor, CPU, CPUSp
     .input('NumHDMI', sql.Int(), NumHDMI)
     .input('Weight', sql.Float(), Weight)
     .input('BatteryLife', sql.Numeric(5,2), BatteryLife)
-    .execute('dbo.insertProductProc')
+    .execute('insertProductProc')
 }
 
 function makeRouter() {
