@@ -111,34 +111,10 @@ function makeRouter() {
     var weight = req.body.weight
     var batteryLife = req.body.batteryLife
       
-      var requestType = req.body.optradio;
-      console.log(requestType);
-      switch (requestType) {
-        case 'create':
-          addProduct().then(function () {
-            res.redirect('/')
-            console.log("success")
-          }).catch(function (err) {
-            console.log(err);
-          });
-          break;
-        case 'update':
-          //updateCustomer(email, phoneNumber, address, city, state, contactFName, contactLName, contactType, relationship).then(function () {
-            res.redirect('/')
-          }).catch(function (err) {
-            console.log(err);
-          });
-          break;
-        case 'delete':
-          //deleteCustomer(email).then(function () {
-            res.redirect('/')
-          }).catch(function (err) {
-            console.log(err);
-          });
-          break;
-        default:
-          break;
-      }
+    addProduct(retailer, prodName, brand, price, OS, formFactor, CPU, CPUSpeed, storageType, storageSize, memory, touch, GPU, resWidth, resHeight, dispSize, numUSB2, numUSB3, numHDMI, weight, batteryLife).then(function () {
+    res.redirect('/')
+    console.log("success")
+    
     }).catch(function (error) {
       console.log(error);
     });
