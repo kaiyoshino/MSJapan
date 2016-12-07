@@ -114,18 +114,20 @@
 
 
 
-                <table class="table table-hover" id="data" name="data" class="form-control">
+                <table class="table table-striped table-hover" id="data" name="data" class="form-control">
                   <thead>
                     <tr>
                       <th>Brand</th>
                       <th>Product</th>
+                      <th>Operating System</th>
                       <th id="togglePrice" style="cursor:pointer">Price (YEN)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="x in data">
                       <td>{{x.Brand}}</td>
-                      <td>{{x.Product}}}</td>
+                      <td>{{x.Product}}</td>
+                      <td>{{x['Operating System']}}</td>
                       <td><span class="currencySymbol">¥</span><span class="priceChange">{{ x['Price(Yen)']}}</span></td>
                     </tr>
                    
