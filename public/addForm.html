@@ -14,21 +14,18 @@
 <form class="form-horizontal" role="form" action="/productSubmit" method="post">
 <fieldset>
 
-
 <!-- Form Name -->
 <legend>Info 445</legend>
 
-
-<!-- Text input-->
+<!-- Product input-->
 <div class="form-group">
-  <label for="prodName" class="col-md-4 control-label" for="Product">Product</label>  
+  <label for="prodName" class="col-md-4 control-label">Product</label>  
   <div class="col-md-4">
-    <input id="Product" name="Product" type="text" placeholder="Product" class="form-control input-md">
+    <input id="Product" name="prodName type="text" placeholder="Product" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Brand input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="brand">Brand</label>  
   <div class="col-md-4">
@@ -36,39 +33,35 @@
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Price input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Price">Price</label>  
+  <label class="col-md-4 control-label" for="price">Price</label>  
   <div class="col-md-4">
-    <input id="Price" name="Price" type="text" placeholder="Price" class="form-control input-md">
+    <input id="Price" name="price" type="text" placeholder="Price" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- OS input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Operating System">Operating System</label>  
+  <label class="col-md-4 control-label" for="OS">Operating System</label>  
   <div class="col-md-4">
-    <input id="Operating System" name="Operating System" type="text" placeholder="Operating System" class="form-control input-md">
+    <input id="Operating System" name="OS" type="text" placeholder="Operating System" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Display Size input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Display Size">Display Size</label>  
+  <label class="col-md-4 control-label" for="dispSize">Display Size</label>  
   <div class="col-md-4">
-    <input id="Display Size" name="Display Size" type="text" placeholder="Display Size" class="form-control input-md">
+    <input id="Display Size" name="dispSize" type="text" placeholder="Display Size" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Select Basic -->
+<!-- Prod type Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Product Type">Product Type</label>
+  <label class="col-md-4 control-label" for="formFactor">Product Type</label>
   <div class="col-md-4">
-    <select id="Product Type" name="Product Type" class="form-control">
+    <select id="Product Type" name="formFactor" class="form-control">
       <option value="1">Notebook</option>
       <option value="2">2 in 1</option>
       <option value="3">Tablet</option>
@@ -76,8 +69,7 @@
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- CPU input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="CPU">CPU</label>  
   <div class="col-md-4">
@@ -85,33 +77,29 @@
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- CPU speed input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="CPU Speed">CPU Speed</label>  
+  <label class="col-md-4 control-label" for="CPUSpeed">CPU Speed</label>  
   <div class="col-md-4">
-    <input id="CPU Speed" name="CPU Speed" type="text" placeholder="CPU Speed" class="form-control input-md">
+    <input id="CPU Speed" name="CPUSpeed" type="text" placeholder="CPU Speed" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Storage Type input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Storage Type">Storage Type</label>  
+  <label class="col-md-4 control-label" for="storageType">Storage Type</label>  
   <div class="col-md-4">
-    <input id="Storage Type" name="Storage Type" type="text" placeholder="Storage Type" class="form-control input-md">
+    <input id="Storage Type" name="storageType" type="text" placeholder="Storage Type" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Storage Size input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="storage size">Storage Size (GB)</label>  
+  <label class="col-md-4 control-label" for="storageSize">Storage Size (GB)</label>  
   <div class="col-md-4">
-    <input id="storage size" name="storage size" type="text" placeholder="Storage Size (GB)" class="form-control input-md"> 
+    <input id="storage size" name="storageSize" type="text" placeholder="Storage Size (GB)" class="form-control input-md"> 
   </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
@@ -122,7 +110,7 @@
 </div>
 
 
-<!-- Select Basic -->
+<!-- touch Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="touch">Touch</label>
   <div class="col-md-4">
@@ -134,58 +122,55 @@
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- GPU input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="gpu">GPU</label>  
+  <label class="col-md-4 control-label" for="GPU">GPU</label>  
   <div class="col-md-4">
-    <input id="gpu" name="gpu" type="text" placeholder="GPU" class="form-control input-md">
+    <input id="gpu" name="GPU" type="text" placeholder="GPU" class="form-control input-md">
   </div>
 </div>
 
-<!-- Text input-->
+<!-- resW input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Resolutionwidth">Resolution Width</label>  
+  <label class="col-md-4 control-label" for="resWidth">Resolution Width</label>  
   <div class="col-md-4">
-    <input id="Resolutionwidth" name="Resolutionwidth" type="text" placeholder="Resolution Width" class="form-control input-md">  
+    <input id="Resolutionwidth" name="resWidth" type="text" placeholder="Resolution Width" class="form-control input-md">  
   </div>
 </div>
 
-<!-- Text input-->
+<!-- resH input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="resolutionheight">Resolution Height</label>  
+  <label class="col-md-4 control-label" for="resHeight">Resolution Height</label>  
   <div class="col-md-4">
-    <input id="resolutionheight" name="resolutionheight" type="text" placeholder="Resolution Height" class="form-control input-md">
+    <input id="resolutionheight" name="resHeight" type="text" placeholder="Resolution Height" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- numUSB2 input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="numberusb2">Number of USB2</label>  
+  <label class="col-md-4 control-label" for="numUSB2">Number of USB2</label>  
   <div class="col-md-4">
-    <input id="numberusb2" name="numberusb2" type="text" placeholder="Number of USB2" class="form-control input-md">  
+    <input id="numberusb2" name="numUSB2" type="text" placeholder="Number of USB2" class="form-control input-md">  
   </div>
 </div>
 
-<!-- Text input-->
+<!-- USB3 input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="numberusb3">Number of USB3</label>  
+  <label class="col-md-4 control-label" for="numUSB3">Number of USB3</label>  
   <div class="col-md-4">
-    <input id="numberusb3" name="numberusb3" type="text" placeholder="Number of USB3" class="form-control input-md">
+    <input id="numberusb3" name="numUSB3" type="text" placeholder="Number of USB3" class="form-control input-md">
   </div>
 </div>
 
-<!-- Text input-->
+<!-- HDMI input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="numberhdmi">Number of HDMI</label>  
+  <label class="col-md-4 control-label" for="numHDMI">Number of HDMI</label>  
   <div class="col-md-4">
-    <input id="numberhdmi" name="numberhdmi" type="text" placeholder="Number of HDMI" class="form-control input-md">
+    <input id="numberhdmi" name="numHDMI" type="text" placeholder="Number of HDMI" class="form-control input-md">
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- Weight input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="weight">Weight</label>  
   <div class="col-md-4">
@@ -193,21 +178,11 @@
   </div>
 </div>
 
-
-<!-- Text input-->
+<!-- battery life input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="batterylife">Battery Life</label>  
+  <label class="col-md-4 control-label" for="batteryLife">Battery Life</label>  
   <div class="col-md-4">
-    <input id="batterylife" name="batterylife" type="text" placeholder="Battery Life" class="form-control input-md">
-  </div>
-</div>
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="chargetime">Charging Time</label>  
-  <div class="col-md-4">
-    <input id="chargetime" name="chargetime" type="text" placeholder="Charging Time" class="form-control input-md">
+    <input id="batterylife" name="batteryLife" type="text" placeholder="Battery Life" class="form-control input-md">
   </div>
 </div>
 
