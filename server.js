@@ -122,7 +122,7 @@ function makeRouter() {
 		
   app.use(cors())  
 
-  app.get('', function (req, res) {
+  app.get('/', function (req, res) {
     getProduct()
   	res.sendFile('./public/index.html', { root: __dirname })
   })

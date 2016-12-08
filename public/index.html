@@ -106,6 +106,8 @@
                         <input type="text" class="form-control" id="exRate" placeholder='1 USD to X'>
                       </div>
                     </div>
+
+                    <button class="btn" onclick="addForm()">Add Product</button>
                      
                   </fieldset>
                </form>
@@ -160,8 +162,9 @@
       //   }
       // });
 
-
-
+      function addForm() {
+        window.location.href = '/addForm'
+      }
 
       function refreshCurrency(){
         var currency = document.getElementsByClassName("priceChange");
