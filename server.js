@@ -141,6 +141,7 @@ function makeRouter() {
   app.get('/addJSON', function(req, res) {
     addJSON();
     console.log("added JSON")
+	  res.redirect('/')
   })
 
   app.post('/productSubmit', function (req, res) {
