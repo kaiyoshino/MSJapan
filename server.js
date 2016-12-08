@@ -122,9 +122,9 @@ function makeRouter() {
 		
   app.use(cors())  
 
-  app.get('/', function (req, res) {
+  app.get('', function (req, res) {
+    getProduct()
   	res.sendFile('./public/index.html', { root: __dirname })
-    .then(getProduct())
   })
 
   app.get('/addForm', function (req, res) {
@@ -166,6 +166,7 @@ function makeRouter() {
       var batteryLife = req.body.batteryLife
         
       addProduct(retailer, prodName, brand, price, OS, formFactor, CPU, CPUSpeed, storageType, storageSize, memory, touch, GPU, resWidth, resHeight, dispSize, numUSB2, numUSB3, numHDMI, weight, batteryLife).then(function () {
+        getProduct()
         res.redirect('/')
         console.log("success")
       }).catch(function (err) {
