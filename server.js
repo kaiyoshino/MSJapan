@@ -34,13 +34,10 @@ function connectToDb() {
 function getProduct() {
 	console.log("Getting Product")
 	return new sql.Request()
-		// .query('SELECT db_name()')
-		.query('SELECT * FROM Product')
-		//.query('SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = "BASE TABLE" AND TABLE_CATALOG="dbName"')
-		// .query('SELECT P.ProductName FROM Product P JOIN Manufacturer M ON P.ManufacturerID = M.ManufacturerID WHERE M.ManfacturerName = "Lenovo")
+		.execute('uspGetAllProducts')
 		.then(function(recordsets) {
 			// console.log(recordsets);
-      data = recordsets;
+      data = recordsets[0];
 		})
 }
 
